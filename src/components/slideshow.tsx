@@ -1,3 +1,4 @@
+import { importImages } from "@/utils/image.utils";
 import {
   Autoplay,
   EffectCoverflow,
@@ -7,12 +8,11 @@ import {
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
-const slideshowImgs = [
-  "linkedin.jpg",
-  "iamge.jpeg",
-  "photocpot.jpeg",
-  "volunteerevent.jpeg",
-];
+const slideshowImgs = importImages(
+  import.meta.glob("@/assets/slideshow-images/*.{png,jpg,jpeg,svg}", {
+    eager: true,
+  })
+);
 
 const SlideshowNavButtons = () => {
   const swiper = useSwiper();
@@ -62,7 +62,7 @@ const Slideshow = () => {
     >
       {slideshowImgs.map((img) => (
         <SwiperSlide>
-          <img src={`./src/assets/slideshow-images/${img}`} />
+          <img src={img} />
         </SwiperSlide>
       ))}
       <SlideshowNavButtons />
