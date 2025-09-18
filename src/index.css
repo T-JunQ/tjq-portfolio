@@ -1,8 +1,58 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-float_in: float_in 1s ease-in-out;
+
+  @keyframes float_in {
+    0% {
+      opacity: 0%;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(0px);
+    }
+  }
+
+  --animate-fall_in: fall_in 1s ease-in-out;
+
+  @keyframes fall_in {
+    0% {
+      opacity: 0%;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 100%;
+      transform: translate(0px);
+    }
+  }
+
+  --animate-highlight: color_change 2.5s ease-in forwards;
+
+  @keyframes color_change {
+    0% {
+      color: #ffff;
+    }
+    100% {
+      color: darkorchid;
+    }
+  }
+}
+
+body {
+  position: relative;
+}
+
+p,
+h1,
+h2 {
+  color: #ffff;
+}
+
 html {
-  background-color: #191939;
+  background-color: #101026;
   font-family: "Karla", serif;
+  overflow-x: hidden;
 }
 
 .inria-sans-regular {
@@ -27,4 +77,49 @@ html {
   font-family: "Kodchasan", serif;
   font-weight: 700;
   font-style: normal;
+}
+
+.karla-bold {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.karla-light-bold {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mySwiper {
+  justify-items: center;
+  align-content: center;
+}
+
+.swiper-slide {
+  align-self: center;
+}
+
+.swiper-slide img {
+  align-content: center;
+  height: 350px;
+  width: 450px;
+  object-fit: cover;
+  border: solid 5px darkblue;
+  border-radius: 5%;
+  box-shadow: 0px 1px 30px rgba(208, 0, 255, 0.168);
+  filter: blur(1px);
+}
+
+.swiper-slide-active img {
+  transition: 0.2s ease-in;
+  filter: blur(0px);
+}
+
+.swiper-nav-btns button:hover {
+  box-shadow: 0px 1px 20px rgba(209, 5, 255, 0.64);
+  padding: 10px 18px;
+  transition: 0.2s ease-in-out;
 }
