@@ -31,7 +31,7 @@ const timelineData: TimelineItem[] = [
 
 const Experience = () => {
   return (
-    <div className="flex flex-col gap-3 mx-20">
+    <div className="flex flex-col gap-3 mx-20" id={"experience"}>
       <h1 className="karla-bold text-4xl self-center">Work Experience</h1>
 
       <div className="mx-auto my-5 p-5 relative">
@@ -45,6 +45,12 @@ const Experience = () => {
                   isEven ? "pr-35 self-end" : "pl-35 self-start"
                 } py-8`}
               >
+                {/* Start Dot */}
+                <div
+                  className={`absolute w-6 h-6 bg-fuchsia-600 rounded-full top-0 -left-[9px] z-10 ${
+                    index !== 0 && "hidden"
+                  }`}
+                ></div>
                 {/* Timeline line */}
                 <div
                   className={`absolute top-0 -bottom-1 w-1 border-[6px] border-fuchsia-900 rounded-full  
@@ -102,6 +108,12 @@ const Experience = () => {
                   className={`absolute top-0 h-1.5 bg-fuchsia-900 w-full rounded-full ${
                     isEven ? "right-0" : "left-0"
                   } ${index === 0 ? "hidden" : ""}`}
+                ></div>
+                {/* Dot */}
+                <div
+                  className={`absolute w-6 h-6 bg-fuchsia-600 rounded-full -bottom-4 -right-[9px] z-10 ${
+                    index !== timelineData.length - 1 && "hidden"
+                  }`}
                 ></div>
               </div>
             );

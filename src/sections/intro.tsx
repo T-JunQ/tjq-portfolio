@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <div
-      id={"Intro"}
+      id={"intro"}
       className="Intro flex flex-row justify-center mt-15 items-center gap-25 px-5"
     >
       <div className="kodchasan-bold text-white text-6xl animate-float_in">

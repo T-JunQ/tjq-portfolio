@@ -1,7 +1,9 @@
 import Divider from "./components/divider";
 import Navbar from "./components/navbar";
 import AboutMe from "./sections/about-me";
+import Education from "./sections/education";
 import Experience from "./sections/experience";
+import Footer from "./sections/footer";
 import Intro from "./sections/intro";
 import Projects from "./sections/projects";
 import Skills from "./sections/skills";
@@ -18,9 +20,12 @@ function App() {
         <Divider /> {/* Divider */}
         <Skills />
         <Divider /> {/* Divider */}
+        <Experience />
+        <Divider /> {/* Divider */}
         <Projects />
         <Divider /> {/* Divider */}
-        <Experience />
+        <Education />
+        <Footer />
       </div>
       <div className="bg-animation opacity-80 [&>div]:-z-10">
         <div id="stars"></div>

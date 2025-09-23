@@ -28,11 +28,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   const isEven = index && (index + 1) % 2 == 0;
   const cardBg = isEven
     ? `linear-gradient(
-    180deg,
-    rgba(68, 11, 128, 1) 0%,
-    rgba(91, 1, 121, 1) 100%
-    )`
-    : `linear-gradient(180deg, rgba(58, 6, 114, 1) 0%, rgba(50, 45, 134, 1) 100%)`;
+        180deg,
+        rgba(64, 7, 124, 1) 0%,
+        rgba(75, 6, 98, 1) 100%
+      )`
+    : `linear-gradient(
+      180deg,
+      rgba(58, 6, 114, 1) 0%,
+      rgba(28, 36, 90, 1) 100%
+    )`;
 
   return (
     <div

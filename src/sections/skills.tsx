@@ -45,7 +45,10 @@ const Skills = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-4 mx-20">
+    <div
+      className="flex flex-col justify-center items-center gap-4 mx-20"
+      id={"skills"}
+    >
       <h1 className="karla-bold text-4xl">
         Skills <span className="text-fuchsia-600">&</span> Proficiency
       </h1>

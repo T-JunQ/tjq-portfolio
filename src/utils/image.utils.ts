@@ -14,6 +14,7 @@ enum ImageType {
   LanguageImages = "languageImages",
   SoftwareImages = "softwareImages",
   OrganisationImages = "orgImages",
+  EducationImages = "eduImages",
 }
 
 const ImageCollections: Record<ImageType, ImageRecord> = {
@@ -41,6 +42,12 @@ const ImageCollections: Record<ImageType, ImageRecord> = {
     }),
     path: "/orgs/",
   },
+  [ImageType.EducationImages]: {
+    imageIcons: import.meta.glob("@/assets/education/*.png", {
+      eager: true,
+    }),
+    path: "/education/",
+  },
 };
 
 // Function to convert imageIcons into a Record of key → image path
@@ -66,11 +73,15 @@ const softwareMap: Record<string, string> = imageMap(ImageType.SoftwareImages);
 const organisationMap: Record<string, string> = imageMap(
   ImageType.OrganisationImages
 );
+const educationMap: Record<string, string> = imageMap(
+  ImageType.EducationImages
+);
 
 export {
   mainImageMap,
   languageMap,
   softwareMap,
   organisationMap,
+  educationMap,
   importImages,
 };

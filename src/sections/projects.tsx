@@ -101,7 +101,7 @@ const projectList: ProjectCardProps[] = [
 
 const Projects = () => {
   return (
-    <div className="flex flex-col gap-3 mx-38 items-center">
+    <div className="flex flex-col gap-3 mx-38 items-center" id={"projects"}>
       <h1 className="karla-bold text-4xl">Project</h1>
       {projectList.map((project, i) => (
         <ProjectCard key={project.projectKey} {...project} index={i} />
