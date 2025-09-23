@@ -4,40 +4,73 @@ const importImages = (modules: Record<string, any>): string[] => {
   return Object.values(modules).map((mod: any) => mod.default);
 };
 
-// Project main images import
-const mainImages = import.meta.glob("@/assets/projects/*/main.png", {
-  eager: true,
-});
+interface ImageRecord {
+  imageIcons: Record<string, { default: string }>;
+  path: string;
+}
 
-const mainImageMap: Record<string, string> = Object.fromEntries(
-  Object.entries(mainImages).map(([path, mod]: [string, any]) => {
-    const projectKey = path.split("/projects/")[1].split("/")[0];
-    return [projectKey, mod.default];
-  })
+enum ImageType {
+  MainImages = "mainImages",
+  LanguageImages = "languageImages",
+  SoftwareImages = "softwareImages",
+  OrganisationImages = "orgImages",
+}
+
+const ImageCollections: Record<ImageType, ImageRecord> = {
+  [ImageType.MainImages]: {
+    imageIcons: import.meta.glob("@/assets/projects/*/main.png", {
+      eager: true,
+    }),
+    path: "/projects/",
+  },
+  [ImageType.LanguageImages]: {
+    imageIcons: import.meta.glob("@/assets/languages/*.png", {
+      eager: true,
+    }),
+    path: "/languages/",
+  },
+  [ImageType.SoftwareImages]: {
+    imageIcons: import.meta.glob("@/assets/software/*.png", {
+      eager: true,
+    }),
+    path: "/software/",
+  },
+  [ImageType.OrganisationImages]: {
+    imageIcons: import.meta.glob("@/assets/orgs/*.png", {
+      eager: true,
+    }),
+    path: "/orgs/",
+  },
+};
+
+// Function to convert imageIcons into a Record of key → image path
+const imageMap = (type: ImageType): Record<string, string> => {
+  const record = ImageCollections[type];
+  return Object.fromEntries(
+    Object.entries(record.imageIcons).map(([path, mod]) => {
+      const projectKey = path
+        .split(record.path)[1]
+        .split("/")[0]
+        .split(".png")[0];
+      return [projectKey, mod.default];
+    })
+  );
+};
+
+const mainImageMap: Record<string, string> = imageMap(ImageType.MainImages);
+
+const languageMap: Record<string, string> = imageMap(ImageType.LanguageImages);
+
+const softwareMap: Record<string, string> = imageMap(ImageType.SoftwareImages);
+
+const organisationMap: Record<string, string> = imageMap(
+  ImageType.OrganisationImages
 );
 
-// Technologies images import
-const languageIcons = import.meta.glob("@/assets/languages/*.png", {
-  eager: true,
-});
-
-const languageMap: Record<string, string> = Object.fromEntries(
-  Object.entries(languageIcons).map(([path, mod]: [string, any]) => {
-    const name = path.split("/languages/")[1].replace(".png", "");
-    return [name, mod.default];
-  })
-);
-
-// Software images import
-const softwareIcons = import.meta.glob("@/assets/software/*.png", {
-  eager: true,
-});
-
-const softwareMap: Record<string, string> = Object.fromEntries(
-  Object.entries(softwareIcons).map(([path, mod]: [string, any]) => {
-    const name = path.split("/software/")[1].replace(".png", "");
-    return [name, mod.default];
-  })
-);
-
-export { mainImageMap, languageMap, softwareMap, importImages };
+export {
+  mainImageMap,
+  languageMap,
+  softwareMap,
+  organisationMap,
+  importImages,
+};

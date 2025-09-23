@@ -25,7 +25,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   website,
   index,
 }) => {
-  console.log(index);
   const isEven = index && (index + 1) % 2 == 0;
   const cardBg = isEven
     ? `linear-gradient(
@@ -80,10 +79,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             pics.map((pic) => (
               <div className="relative w-[140px] h-[80px]">
                 <img
-                  className="w-full h-full object-contain rounded-2xl bg-fuchsia-950"
+                  className="w-full h-full object-contain rounded-2xl bg-fuchsia-950 drop-shadow-md"
                   src={pic}
                 />
-                <div className="absolute top-0 left-0 w-full h-full rounded-2xl border-[4px] border-[#240b54] pointer-events-none" />
+                <div className="absolute top-0 left-0 w-full h-full rounded-2xl pointer-events-none" />
               </div>
             ))}
         </div>
@@ -91,6 +90,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {github && (
             <a
               href={github}
+              target="_blank"
               className="py-1.5 px-3 relative flex mt-4 bg-blue-700 rounded-[100px] items-center justify-evenly gap-1.5"
             >
               <div className="text-[#ffffff] text-left karla-bold text-base">
@@ -102,6 +102,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {website && (
             <a
               href={website.url}
+              target="_blank"
               className="py-1.5 px-3 relative flex mt-4 bg-blue-700 rounded-[100px] items-center justify-evenly gap-1.5"
             >
               <div className="text-[#ffffff] text-left karla-bold text-base">

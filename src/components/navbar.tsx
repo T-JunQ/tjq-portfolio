@@ -3,7 +3,7 @@ import { navConfig } from "../configs/navConfig";
 const Navbar = () => {
   return (
     <div
-      className="w-screen flex items-center justify-between p-3 px-12"
+      className="w-screen flex items-center justify-between p-3 px-12 z-20"
       style={{
         background:
           "linear-gradient(180deg, rgba(47, 71, 222, 0.15) 10%,rgba(109, 119, 186, 0.05) 100%)",
