@@ -12,7 +12,7 @@ const Intro = () => {
         </div>
       </div>
       <img
-        className="transform -scale-x-80 scale-y-80 animate-float_in"
+        className="transform -scale-x-80 scale-y-80 md:-scale-x-100 md:scale-y-100 animate-float_in"
         src="https://cdn-icons-png.flaticon.com/512/10740/10740609.png"
       />
     </div>
