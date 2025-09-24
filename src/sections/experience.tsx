@@ -57,7 +57,7 @@ const Experience = () => {
                 ></div>
                 {/* Timeline line */}
                 <div
-                  className={`absolute top-0 -bottom-1 w-1 border-[6px] border-fuchsia-900 rounded-full  
+                  className={`-z-10 absolute top-0 -bottom-1 w-1 border-[6px] border-fuchsia-900 rounded-full  
                     ${isEven ? "right-0 border-l-0" : "left-0 border-r-0"}
                     ${index === 0 ? "border-t-0 rounded-t-none" : ""}
                   `}

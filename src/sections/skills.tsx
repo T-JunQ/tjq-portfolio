@@ -8,8 +8,10 @@ interface GridShowcaseProps {
 const GridShowcase: React.FC<GridShowcaseProps> = ({ header, imgArr }) => {
   return (
     <>
-      <span className="karla-bold text-xl text-fuchsia-700">{header}</span>
-      <div className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-14 mb-15 mx-4 sm:mx-10 md:mx-50 mt-4">
+      <span className="karla-bold text-xl text-fuchsia-700 text-center">
+        {header}
+      </span>
+      <div className="flex flex-wrap justify-center gap-5 sm:gap-10 md:gap-14 mb-15 sm:mx-10 md:mx-50 mt-4">
         {imgArr.map((v) => (
           <div
             key={v}
