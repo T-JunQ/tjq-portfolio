@@ -3,7 +3,10 @@ import Slideshow from "../components/slideshow";
 const AboutMe = () => {
   return (
     <>
-      <div id="aboutme" className="text-center flex flex-col gap-3 mx-40">
+      <div
+        id="aboutme"
+        className="text-center flex flex-col gap-3 mx-5 md:mx-40"
+      >
         <h1 className="karla-bold text-4xl">Aspiring Software Engineer</h1>
         <p className="karla-light-bold text-xl">
           From an early age, my enthusiasm for Information Technology has driven

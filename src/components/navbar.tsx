@@ -3,7 +3,7 @@ import { navConfig } from "../configs/navConfig";
 const Navbar = () => {
   return (
     <div
-      className="w-screen flex items-center justify-between p-3 px-12 z-20"
+      className="w-screen flex items-center justify-between p-3 md:px-12 z-20 overflow-y-hidden"
       style={{
         background:
           "linear-gradient(180deg, rgba(47, 71, 222, 0.15) 10%,rgba(109, 119, 186, 0.05) 100%)",
@@ -18,7 +18,7 @@ const Navbar = () => {
         <span className="text-white">JQ</span>
         <span className="text-purple-400">.</span>
       </a>
-      <div className="flex flex-row gap-10">
+      <div className="flex flex-row gap-10 hidden md:flex">
         {navConfig.map((v, i) => (
           <a
             href={v.link}

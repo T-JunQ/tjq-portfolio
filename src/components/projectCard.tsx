@@ -40,15 +40,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className="rounded-[16px] relative flex flex-row p-8 gap-8 mt-10"
+      className="rounded-[16px] relative flex flex-col items-center lg: lg:flex-row p-8 gap-8 mt-10"
       style={{
         background: cardBg,
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
       }}
     >
       <img
-        className={`rounded-[16px] relative object-cover w-[360px] h-[360px] bg-white ${
-          isEven && "order-3"
+        className={`rounded-[16px] relative object-cover w-full h-[35vh] md:w-[360px] md:h-[360px] bg-white ${
+          isEven && "lg:order-3"
         }`}
         style={{
           boxShadow: `0px 5px 5px 1px rgba(0, 0, 0, 0.25)`,
@@ -60,7 +60,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="karla-light text-[#D0D0D0] mt-2">{desc}</div>
         <div className="mt-3">
           <h2>Technologies used:</h2>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-wrap flex-row gap-2">
             {technologies.map((technology) => (
               <div
                 className="p-2 rounded-[50%] bg-fuchsia-900 w-10 h-10 box-shadow mt-2 flex justify-center items-center"
@@ -78,10 +78,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
         </div>
-        <div className="flex flex-row gap-4 mt-5">
+        <div className="flex flex-row flex-wrap lg:flex-nowrap gap-4 mt-5">
           {Array.isArray(pics) &&
             pics.map((pic) => (
-              <div className="relative w-[140px] h-[80px]">
+              <div className="relative  w-[100px] h-[60px] md:w-[140px] md:h-[80px]">
                 <img
                   className="w-full h-full object-contain rounded-2xl bg-fuchsia-950 drop-shadow-md"
                   src={pic}
@@ -90,7 +90,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
             ))}
         </div>
-        <div className="flex flex-row gap-3 mt-1">
+        <div className="flex flex-row gap-3 mt-1 align-bottom">
           {github && (
             <a
               href={github}

@@ -21,7 +21,7 @@ const EduationData = [
 
 const Education = () => {
   return (
-    <div className="flex flex-col gap-3 mx-20" id={"education"}>
+    <div className="flex flex-col gap-3 mx-5 md:mx-20" id={"education"}>
       <h1 className="karla-bold text-4xl self-center mb-10">Education</h1>
       <div className={`relative flex flex-col mx-auto`}>
         {EduationData.map((item, index) => {
@@ -29,12 +29,12 @@ const Education = () => {
           return (
             <div className="relative max-w-[1000px]">
               <div
-                className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-fuchsia-900 rounded-full`}
+                className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-fuchsia-900 rounded-full -z-10`}
               />
               {/* Card content */}
               <div
                 className={`flex flex-col gap-1 p-4 text-white rounded-lg bg-[#2B1E4A] my-10 ${
-                  isEven ? "mr-120 self-end" : "ml-120 self-start"
+                  isEven ? "md:mr-120 self-end" : "md:ml-120 self-start"
                 }`}
                 style={{ boxShadow: "0px 4px 4px 1px rgba(0, 0, 0, 0.25)" }}
               >

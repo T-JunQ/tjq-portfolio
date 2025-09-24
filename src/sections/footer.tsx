@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="text-white karlas-light py-4 px-30 mt-10 flex justify-between w-screen bg-[#01013e] rounded-t-3xl">
+    <div className="text-white karlas-light py-4 px-10 md:px-30 mt-10 flex justify-between w-screen bg-[#01013e] rounded-t-3xl">
       <div className="text-left font-['Inria Sans', serif] text-xl inria-sans-bold">
         <span className="text-white">JQ</span>
         <span className="text-purple-400">.</span>

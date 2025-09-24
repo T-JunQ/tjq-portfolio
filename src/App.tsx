@@ -12,7 +12,7 @@ import "./stars.css";
 function App() {
   return (
     <>
-      <div className="w-screen h-dvh z-10 relative">
+      <div className="w-screen h-dvh z-10 relative ">
         <Navbar />
         <Intro />
         <Divider /> {/* Divider */}

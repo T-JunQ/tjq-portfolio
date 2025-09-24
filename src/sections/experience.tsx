@@ -31,8 +31,10 @@ const timelineData: TimelineItem[] = [
 
 const Experience = () => {
   return (
-    <div className="flex flex-col gap-3 mx-20" id={"experience"}>
-      <h1 className="karla-bold text-4xl self-center">Work Experience</h1>
+    <div className="flex flex-col gap-3 md:mx-20" id={"experience"}>
+      <h1 className="karla-bold text-4xl self-center text-center">
+        Work Experience
+      </h1>
 
       <div className="mx-auto my-5 p-5 relative">
         <div className="flex flex-col relative">
@@ -42,12 +44,14 @@ const Experience = () => {
               <div
                 key={index}
                 className={`relative max-w-[700px] ${
-                  isEven ? "pr-35 self-end" : "pl-35 self-start"
+                  isEven
+                    ? "pr-10 md:pr-35 self-end"
+                    : "pl-10 md:pl-35 self-start"
                 } py-8`}
               >
                 {/* Start Dot */}
                 <div
-                  className={`absolute w-6 h-6 bg-fuchsia-600 rounded-full top-0 -left-[9px] z-10 ${
+                  className={`absolute w-6 h-6 bg-fuchsia-600 rounded-full top-0 -left-[9px] ${
                     index !== 0 && "hidden"
                   }`}
                 ></div>
@@ -60,7 +64,7 @@ const Experience = () => {
                 />
                 {/* Card content */}
                 <div
-                  className="flex flex-col bg-[#160147] text-white rounded-lg mt-10 mb-5"
+                  className="flex flex-col bg-[#160147] text-white rounded-lg mt-10 mb-5 z-10"
                   style={{ boxShadow: "0px 4px 4px 1px rgba(0, 0, 0, 0.25)" }}
                 >
                   <div
@@ -92,7 +96,7 @@ const Experience = () => {
 
                   {/* Dotted Line */}
                   <div
-                    className={`absolute bottom-[48.8%] border-t-5 border-dotted border-fuchsia-700 w-28 ${
+                    className={`absolute bottom-[48.8%] border-t-5 border-dotted border-fuchsia-700 w-28 -z-10 ${
                       isEven ? "right-5" : "left-5"
                     }`}
                   />

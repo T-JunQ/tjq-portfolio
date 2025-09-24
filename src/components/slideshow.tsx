@@ -17,7 +17,7 @@ const slideshowImgs = importImages(
 const SlideshowNavButtons = () => {
   const swiper = useSwiper();
   return (
-    <div className="swiper-nav-btns flex justify-between absolute top-[50%] w-[95%] z-10">
+    <div className="swiper-nav-btns flex justify-between absolute top-[50%] w-full md:w-[95%] z-10 ">
       <button
         className="bg-[#4f125c] rounded-[50%] py-2 px-4"
         onClick={() => {
@@ -58,7 +58,7 @@ const Slideshow = () => {
       draggable
       modules={[Pagination, Autoplay, EffectCoverflow, Navigation]}
       centeredSlides
-      className="mySwiper my-30 w-[85%] relative"
+      className="mySwiper my-30 md:w-[85%] relative"
     >
       {slideshowImgs.map((img) => (
         <SwiperSlide>
