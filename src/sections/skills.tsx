@@ -1,4 +1,5 @@
 import { softwareMap, languageMap } from "@/utils/image.utils";
+import { motion } from "motion/react";
 
 interface GridShowcaseProps {
   header: string;
@@ -12,21 +13,25 @@ const GridShowcase: React.FC<GridShowcaseProps> = ({ header, imgArr }) => {
         {header}
       </span>
       <div className="flex flex-wrap justify-center gap-5 sm:gap-10 md:gap-14 mb-15 sm:mx-10 md:mx-50 mt-4">
-        {imgArr.map((v) => (
-          <div
+        {imgArr.map((v, i) => (
+          <motion.div
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 + i / 10, ease: "easeOut" }}
+            viewport={{ once: true }}
             key={v}
             className="
-        flex justify-center items-center rounded-full bg-fuchsia-900 
-        w-20 h-20 sm:w-28 sm:h-28 md:w-35 md:h-35 
-        p-4 sm:p-6 md:p-8 
-        box-shadow
-      "
+            flex justify-center items-center rounded-full bg-fuchsia-900 
+            w-20 h-20 sm:w-28 sm:h-28 md:w-35 md:h-35 
+            p-4 sm:p-6 md:p-8 
+            box-shadow
+            "
           >
             <img
               className="object-scale-down w-10 h-10 sm:w-14 sm:h-14 md:w-20 md:h-20"
               src={v}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
 

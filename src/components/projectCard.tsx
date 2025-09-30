@@ -1,5 +1,6 @@
 import { mainImageMap, languageMap, softwareMap } from "@/utils/image.utils";
 import websiteImg from "../assets/website.png";
+import { motion } from "motion/react";
 
 export interface ProjectCardProps {
   title: string;
@@ -39,12 +40,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     )`;
 
   return (
-    <div
+    <motion.div
       className="rounded-[16px] relative flex flex-col items-center lg: lg:flex-row p-8 gap-8 mt-10"
       style={{
         background: cardBg,
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
       }}
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       <img
         className={`rounded-[16px] relative object-cover w-full h-[35vh] md:w-[360px] md:h-[360px] bg-white ${
@@ -81,13 +86,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="flex flex-row flex-wrap lg:flex-nowrap gap-4 mt-5">
           {Array.isArray(pics) &&
             pics.map((pic) => (
-              <div className="relative  w-[100px] h-[60px] md:w-[140px] md:h-[80px]">
+              <motion.div className="relative  w-[100px] h-[60px] md:w-[140px] md:h-[80px]">
                 <img
                   className="w-full h-full object-contain rounded-2xl bg-fuchsia-950 drop-shadow-md"
                   src={pic}
                 />
                 <div className="absolute top-0 left-0 w-full h-full rounded-2xl pointer-events-none" />
-              </div>
+              </motion.div>
             ))}
         </div>
         <div className="flex flex-row gap-3 mt-1 align-bottom">
@@ -118,6 +123,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </div>
       <div></div>
-    </div>
+    </motion.div>
   );
 };

@@ -23,13 +23,13 @@ const Education = () => {
   return (
     <div className="flex flex-col gap-3 mx-5 md:mx-20" id={"education"}>
       <h1 className="karla-bold text-4xl self-center mb-10">Education</h1>
-      <div className={`relative flex flex-col mx-auto`}>
+      <div className={`relative flex flex-col mx-auto mb-30`}>
         {EduationData.map((item, index) => {
           const isEven = index % 2 === 0;
           return (
             <div className="relative max-w-[1000px]">
               <div
-                className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-fuchsia-900 rounded-full -z-10`}
+                className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-blue-900 rounded-full -z-10`}
               />
               {/* Card content */}
               <div
@@ -52,7 +52,7 @@ const Education = () => {
               </div>
               {/* Dotted Line */}
               <div
-                className={`absolute bottom-[48.8%] border-t-5 border-dotted border-fuchsia-700 w-20 -z-10 ${
+                className={`absolute bottom-[48.8%] border-t-5 border-dotted border-blue-900 w-20 -z-10 ${
                   isEven ? "right-[50%]" : "left-[51%]"
                 }`}
               />

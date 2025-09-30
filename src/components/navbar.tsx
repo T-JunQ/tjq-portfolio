@@ -18,7 +18,7 @@ const Navbar = () => {
         <span className="text-white">JQ</span>
         <span className="text-purple-400">.</span>
       </a>
-      <div className="flex flex-row gap-10 hidden md:flex">
+      <div className="flex-row gap-10 hidden md:flex">
         {navConfig.map((v, i) => (
           <a
             href={v.link}
