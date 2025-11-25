@@ -14,19 +14,6 @@
     }
   }
 
-  --animate-fall_in: fall_in 1s ease-in-out;
-
-  @keyframes fall_in {
-    0% {
-      opacity: 0%;
-      transform: translateY(-5px);
-    }
-    100% {
-      opacity: 100%;
-      transform: translate(0px);
-    }
-  }
-
   --animate-highlight: color_change 2.5s ease-in forwards;
 
   @keyframes color_change {

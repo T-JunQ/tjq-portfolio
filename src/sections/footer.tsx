@@ -1,6 +1,14 @@
+import { motion } from "motion/react";
+
 const Footer = () => {
   return (
-    <div className="text-white karlas-light py-4 px-10 md:px-30 mt-10 flex justify-between w-screen bg-[#01013e] rounded-t-3xl">
+    <motion.div
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true }}
+      className="text-white karlas-light py-4 px-10 md:px-30 mt-10 flex justify-between w-screen bg-[#01013e] rounded-t-3xl"
+    >
       <div className="text-left font-['Inria Sans', serif] text-xl inria-sans-bold">
         <span className="text-white">JQ</span>
         <span className="text-purple-400">.</span>
@@ -25,7 +33,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,21 +1,24 @@
 import { educationMap } from "@/utils/image.utils";
+import { motion } from "motion/react";
 
 const EduationData = [
-  {
-    title: "Gan Eng Seng Primary School",
-    period: "Jan 2012 - Dec 2017",
-    image: "gesps",
-  },
-  {
-    title: "Queenstown Secondary School",
-    period: "Jan 2018 - Dec 2021",
-    image: "qtss",
-  },
   {
     title: "Ngee Ann Polytechnic",
     period: "Apr 2022 - Apr 2025",
     desc: "Diploma in Information Technology",
     image: "np",
+  },
+  {
+    title: "Queenstown Secondary School",
+    period: "Jan 2018 - Dec 2021",
+    desc: "CCAs: Infocomm Club",
+    image: "qtss",
+  },
+  {
+    title: "Gan Eng Seng Primary School",
+    period: "Jan 2012 - Dec 2017",
+    desc: "CCAs: Infocomm Club, Choir",
+    image: "gesps",
   },
 ];
 
@@ -28,11 +31,26 @@ const Education = () => {
           const isEven = index % 2 === 0;
           return (
             <div className="relative max-w-[1000px]">
-              <div
+              <motion.div
+                initial={{ opacity: 0, scaleY: 0, originY: 0 }}
+                whileInView={{ opacity: 1, scaleY: 1 }}
+                transition={{
+                  duration: 1.5,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
                 className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-blue-900 rounded-full -z-10`}
               />
               {/* Card content */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: 0.1 + (index - 1),
+                }}
+                viewport={{ once: true }}
                 className={`flex flex-col gap-1 p-4 text-white rounded-lg bg-[#2B1E4A] my-10 ${
                   isEven ? "md:mr-120 self-end" : "md:ml-120 self-start"
                 }`}
@@ -49,9 +67,17 @@ const Education = () => {
                     src={educationMap[item.image]}
                   />
                 </div>
-              </div>
+              </motion.div>
               {/* Dotted Line */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: 0.1 + (index - 1),
+                }}
+                viewport={{ once: true }}
                 className={`absolute bottom-[48.8%] border-t-5 border-dotted border-blue-900 w-20 -z-10 ${
                   isEven ? "right-[50%]" : "left-[51%]"
                 }`}

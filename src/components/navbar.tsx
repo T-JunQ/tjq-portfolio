@@ -1,8 +1,9 @@
+import { motion } from "motion/react";
 import { navConfig } from "../configs/navConfig";
 
 const Navbar = () => {
   return (
-    <div
+    <motion.div
       className="w-screen flex items-center justify-between p-3 md:px-12 z-20 overflow-y-hidden"
       style={{
         background:
@@ -10,10 +11,14 @@ const Navbar = () => {
         boxShadow: "0px 2px 10px 0px rgba(0, 0, 0, 0.25)",
         backdropFilter: "blur(5px)",
       }}
+      initial={{ opacity: 0, y: -10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      viewport={{ once: true }}
     >
       <a
         href="#"
-        className="text-left font-['Inria Sans', serif] text-xl inria-sans-bold animate-fall_in"
+        className="text-left font-['Inria Sans', serif] text-xl inria-sans-bold "
       >
         <span className="text-white">JQ</span>
         <span className="text-purple-400">.</span>
@@ -23,13 +28,13 @@ const Navbar = () => {
           <a
             href={v.link}
             key={i}
-            className="text-[#ffffff] font-['Inter', serif] font-light animate-fall_in"
+            className="text-[#ffffff] font-['Inter', serif] font-light "
           >
             {v.text}
           </a>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
