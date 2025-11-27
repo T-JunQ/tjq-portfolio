@@ -35,8 +35,9 @@ const Education = () => {
                 initial={{ opacity: 0, scaleY: 0, originY: 0 }}
                 whileInView={{ opacity: 1, scaleY: 1 }}
                 transition={{
-                  duration: 1.5,
+                  duration: 1,
                   ease: "easeOut",
+                  delay: index - 1,
                 }}
                 viewport={{ once: true }}
                 className={`absolute top-0 -bottom-5 left-1/2 border-[4px] border-blue-900 rounded-full -z-10`}
@@ -70,8 +71,8 @@ const Education = () => {
               </motion.div>
               {/* Dotted Line */}
               <motion.div
-                initial={{ opacity: 0, y: 70 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scaleX: 0, originX: 0 }}
+                whileInView={{ opacity: 1, scaleX: 1 }}
                 transition={{
                   duration: 0.7,
                   ease: "easeOut",
