@@ -18,24 +18,20 @@ const Model = () => {
 
   const materials = useLoader(
     MTLLoader,
-    "public/assets/laptop/desktop_shortwires.mtl"
+    "/assets/laptop/desktop_shortwires.mtl"
   );
   materials.preload();
 
   const obj = useLoader(
     OBJLoader,
-    "public/assets/laptop/desktop_shortwires.obj",
+    "/assets/laptop/desktop_shortwires.obj",
     (loader) => {
       loader.setMaterials(materials);
     }
   );
 
   return (
-    <group
-      ref={meshRef}
-      position={[0, 0, 0]}
-      rotation={[Math.PI / 9, Math.PI / 9, 0]}
-    >
+    <group ref={meshRef} position={[0, 0, 0]} rotation={[Math.PI / 9, 0, 0]}>
       <primitive object={obj} scale={7.5} position={[0, 0, -2]} />
     </group>
   );
